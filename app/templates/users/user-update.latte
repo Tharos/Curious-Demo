@@ -1,0 +1,9 @@
+{layout ../@layout.latte}
+
+{block #content}
+
+<h1>Úprava uživatele {$user->name}</h1>
+
+<p><a href="{$linker->createLink(users)}">&larr; Zpět na přehled uživatelů</a></p>
+
+{control $form}

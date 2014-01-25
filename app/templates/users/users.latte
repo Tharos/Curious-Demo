@@ -1,0 +1,37 @@
+{layout ../@layout.latte}
+
+{block #content}
+
+<h1>Přehled uživatelů</h1>
+
+<p><a href="{$linker->createLink(user-create)}">Vytvořit nového uživatele</a></p>
+
+{control $filter}
+
+{if $users}
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Jméno</th>
+			<th>E-mail</th>
+			<th>Poznámka</th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr n:foreach="$users as $user">
+			<td>{$user->id}</td>
+			<td>{$user->name}</td>
+			<td>{$user->email}</td>
+			<td>{if $user->note !== null}{$user->note}{else}N/A{/if}</td>
+			<td class="table-controls">
+				<a href="{$linker->createLink(user-update, [id => $user->id])}">Upravit</a>
+				<a href="{$linker->createLink(user-delete, [id => $user->id])}">Odstranit</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
+{else}
+<p><em>Nebyli nalezeni žádní uživatelé.</em></p>
+{/if}

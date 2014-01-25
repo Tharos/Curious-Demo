@@ -1,0 +1,13 @@
+{layout @layout.latte}
+
+{block #content}
+
+{foreach $coffeeMachines as $coffeeMachine}
+	<p><strong>{$iterator->counter}. automat na kávu</strong></p>
+	{control $coffeeMachine}
+{/foreach}
+
+<p>
+	<a href="{$linker->createLink(this, $resetParameters)}">Začít znovu</a> |
+	<a href="{$linker->createLink(this, [machinesCount => count($coffeeMachines) + 1])}">Přidat další automat</a>
+</p>

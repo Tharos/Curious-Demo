@@ -1,0 +1,74 @@
+leanmapper:
+
+	database:
+		driver: sqlite3
+		database: %appDir%/db/curious.sq3
+		lazy: true
+
+parameters:
+
+	cacheDir: %tempDir%/cache
+
+	templatesDir: %appDir%/templates
+
+	fragmentsDirectories:
+		- %appDir%/fragments
+
+services:
+
+	phpFileStorage:
+		class: Nette\Caching\Storages\PhpFileStorage(@\Directories::getCacheDirectory())
+		autowired: false
+
+	httpRequest:
+		class: Nette\Http\Request
+		factory: @Nette\Http\RequestFactory::createHttpRequest
+
+	fragments:
+		class: Curious\Fragments
+		factory: @Curious\IFragmentsFactory::createFragments
+
+	appRequest:
+		class: Curious\AppRequest
+		factory: @Curious\IRouter::match
+
+	view:
+		class: Nette\Templating\FileTemplate
+		factory: @\TemplateFactory::createTemplate
+
+	state:
+		class: Curious\State
+		factory: @appRequest::getState
+
+	fragment:
+		class: Curious\Fragment
+		factory: @appRequest::getFragment
+
+	url:
+		class: Nette\Http\Url
+		factory: @httpRequest::getUrl
+
+	- LeanMapper\DefaultMapper
+	- LeanMapper\DefaultEntityFactory
+
+	- Nette\Http\RequestFactory
+	- Nette\Utils\Finder
+
+	- Curious\CallbackCaller
+	- Curious\Linker
+	- Curious\FragmentsFactory(@\Directories::getFragmentsDirectories())
+	- Curious\Components
+
+	- Router
+	- Redirector
+	- Directories
+	- ErrorHandler(@\Directories::getTemplatesDirectory())
+	- TemplateFactory(@\Directories::getTemplatesDirectory(), @phpFileStorage)
+
+	- Navigation
+	- CoffeeMachineRenderer
+	- Model\Repository\UserRepository
+	- ConfirmForm
+	- UserForm
+	- Data
+	- UserFilterForm

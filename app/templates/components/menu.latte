@@ -1,0 +1,7 @@
+<ul n:class="nav">
+	{foreach $fragments as $fragmentName => $caption}
+		<li n:class="nav-item, (isset($activeFragmentName) and $activeFragmentName === $fragmentName) ? nav-item-active">
+			<a href="{$linker->createLink($fragmentName, false)}">{$caption}</a>
+		</li>
+	{/foreach}
+</ul>

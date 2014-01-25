@@ -1,0 +1,6 @@
+{
+	"require": {
+		"nette/nette": "v2.1.0",
+		"tharos/leanmapper": "v2.1.0"
+	}
+}

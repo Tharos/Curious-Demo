@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>{control $navigation:title} | Curious</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="{$basePath}js/netteForms.js"></script>
+	<link rel="stylesheet" href="{$basePath}css/reset.css">
+	<link rel="stylesheet" href="{$basePath}css/default.css">
+	{block #head}{/block}
+</head>
+<body>
+	<div id="header">
+		<div class="container">
+			<a class="siteLogo" href="{$linker->createLink(homepage)}"><strong>Curious</strong></a>
+			{control $navigation:menu}
+		</div>
+	</div>
+	<div id="body">
+		<div class="container">
+			{include #content}
+		</div>
+	</div>
+	<div id="footer">
+		Copyright © 2014 Vojtěch Kohout
+	</div>
+</body>
+</html>

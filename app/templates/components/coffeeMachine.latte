@@ -1,0 +1,12 @@
+<div class="coffeeMachine">
+	<p class="coffeeMachine-display">{$component->readDisplay()}</p>
+	<ul>
+		<li>
+			Vložit:
+			{foreach [1, 2, 5, 10, 20, 50] as $coin}
+				<a href="{$component->formatInsertMoneyLink($coin)}">{$coin} Kč</a>
+			{/foreach}
+		</li>
+		<li><a href="{$component->formatBuyCoffeeLink()}">Koupit kávu</a></li>
+	</ul>
+</div>

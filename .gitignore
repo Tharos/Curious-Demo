@@ -1,0 +1,7 @@
+/.idea
+/vendor
+/composer.lock
+/dev.php
+/app/config/dev
+/app/config/config.server.neon
+/app/db/curious.sq3

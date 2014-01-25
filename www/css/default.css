@@ -1,0 +1,161 @@
+body {
+	background: white;
+	font: 19px/25px Calibri, sans-serif;
+	color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Segoe UI', sans-serif;
+	font-weight: normal;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+h1 {
+	font-size: 35px;
+	margin-top: 16px;
+	margin-bottom: 34px;
+}
+h2 {
+	font-size: 31px;
+	margin-top: 50px;
+	padding: 16px 16px 22px;
+	background: #e8f7dc;
+}
+h3 {
+	font-size: 27px;
+	margin-top: 50px;
+}
+h4 {
+	font-size: 23px;
+}
+
+p, ul, ol, table {
+	margin-bottom: 25px;
+}
+
+ul, ol {
+	padding-left: 40px;
+}
+ul ul {
+	margin-bottom: 0;
+}
+
+a {
+	color: #339900;
+	transition: 0.25s;
+}
+a:hover {
+	color: #9ad97b;
+}
+
+form input[type=text], form textarea {
+	font: 19px/25px Calibri, sans-serif;
+	border: 1px solid #bbb;
+	border-radius: 4px;
+	padding: 2px 5px;
+	width: 300px;
+
+}
+form th, form td {
+	text-align: left;
+	padding: 4px;
+}
+form th {
+	padding-right: 15px;
+	font-weight: normal;
+}
+form input[type=submit] {
+	font-size: 16px;
+}
+
+.table {
+	width: 100%;
+}
+.table td, .table th {
+	padding: 3px 5px;
+	border: 1px solid #ccc;
+}
+.table th {
+	background: #f3f3f3;
+	text-align: left;
+}
+.table-controls {
+	width: 190px;
+	text-align: center;
+}
+
+.container {
+	width: 940px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#header {
+	padding-top: 45px;
+}
+#header .siteLogo {
+	position: absolute;
+}
+#header .nav {
+	margin-left: 270px;
+}
+
+#body {
+	border-top: 1px solid #ddd;
+	min-height: 350px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	background: url('../img/gradient-grey.gif') left top repeat-x;
+}
+
+#footer {
+	margin-bottom: 50px;
+	padding-top: 25px;
+	border-top: 1px solid #ddd;
+	background: url('../img/gradient-grey.gif') left top repeat-x;
+	text-align: center;
+	font-size: 16px;
+	color: #aaa;
+}
+
+.siteLogo {
+	text-decoration: none;
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 38px;
+}
+.siteLogo strong {
+	font-weight: normal;
+}
+
+.nav a {
+	display: inline-block;
+	padding: 5px 12px;
+	margin: 1px 3px;
+	line-height: 22px;
+}
+.nav-item {
+	display: inline-block;
+	vertical-align: top;
+}
+.nav-item > a {
+	font-size: 21px;
+}
+.nav-item-active > a {
+	background: #339900;
+	color: white;
+	text-decoration: none;
+}
+
+.spaced li {
+	margin-bottom: 25px;
+}
+.coffeeMachine {
+	border: 1px solid #ccc;
+	margin: 10px 0;
+	padding: 17px 17px 1px;
+	background: #f6f6f6;
+	border-radius: 4px;
+}
+.coffeeMachine-display {
+	font-size: 22px;
+}
