@@ -27,7 +27,7 @@ function initUsers(Navigation $navigation, FileTemplate $template, Directories $
  */
 function listUsers(FileTemplate $template, UserRepository $userRepository, UserFilterForm $userFilterForm, Redirector $redirector, Linker $linker, State $state)
 {
-	$template->filter = $filter = $userFilterForm->createCreateForm();
+	$template->filter = $filter = $userFilterForm->createForm();
 	if ($filter->isSuccess()) {
 		$keyword = $filter['keyword']->getValue();
 		$redirector->redirect($linker->createLink('this', array('keyword' => ($keyword !== '' ? $keyword : null))));

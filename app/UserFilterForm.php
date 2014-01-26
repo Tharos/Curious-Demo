@@ -11,7 +11,7 @@ class UserFilterForm
 	/**
 	 * @return Form
 	 */
-	public function createCreateForm()
+	public function createForm()
 	{
 		$form = new Form;
 
