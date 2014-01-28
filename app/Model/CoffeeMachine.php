@@ -59,11 +59,9 @@ class CoffeeMachine
 	{
 		if ($this->money >= self::COFFEE_PRICE) {
 			$this->money = 0;
-			$this->bought = true;
-			return true;
+			return $this->bought = true;
 		} else {
-			$this->bought = false;
-			return false;
+			return $this->bought = false;
 		}
 	}
 
