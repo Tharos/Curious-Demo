@@ -14,5 +14,5 @@ try {
 }
 
 if ($container->isCreated('view')) {
-	$container->getByType('Nette\Templating\ITemplate')->render();
+	$container->getService('view')->render();
 }
