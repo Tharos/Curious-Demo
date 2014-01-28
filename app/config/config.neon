@@ -34,11 +34,11 @@ services:
 
 	phpFileStorage:
 		class: Nette\Caching\Storages\PhpFileStorage(@\Directories::getCacheDirectory())
+		autowired: false
 
 	state:
 		class: Curious\State
 		factory: @appRequest::getState
-		autowired: false
 
 	url:
 		class: Nette\Http\Url
