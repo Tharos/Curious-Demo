@@ -59,7 +59,7 @@ class Linker
 			$targetParameters = array();
 		} else {
 			if ($parameters !== null and !is_array($parameters)) {
-				throw new InvalidArgumentException('Parameters must be null, array of false.');
+				throw new InvalidArgumentException('Parameters must be null, array or false.');
 			}
 			$targetParameters = $parameters ? : array();
 
